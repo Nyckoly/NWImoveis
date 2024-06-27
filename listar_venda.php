@@ -1,0 +1,103 @@
+<?php
+ 
+ $servername = "localhost";
+ $username = "root";
+ $password = "";
+ $dbname = "imobiliaria";
+
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+if (!$conn) {
+    /* Die - Para a conexão ou o que estiver fazendo e vai mostrar o error que está dando */
+    die("Erro na conexão". mysqli_connect_error());
+}
+$sql = "SELECT *FROM cadastrodeimoveis
+    where tipo = 'venda'";
+$resultado = mysqli_query($conn, $sql)
+?>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/style.css">
+
+        <title>Document</title>
+    </head>
+    <body>
+        <main>
+            <?php include 'cabecalho.php';?>
+            <div class="container">
+ 
+        <table class="table table-striped">
+ 
+            <thead>
+ 
+                <tr>
+                    <th>cidade</th>
+                    <th>Tipo de Residência</th>
+                    <th>valor</th>
+                    <th>bairro</th>
+                    <th>observação</th>
+                    <th>Imagem</th>
+                </tr>
+ 
+            </thead>
+ 
+            <tbody>
+ 
+                <?php
+                if (mysqli_num_rows($resultado) > 0) {
+ 
+                    while ($row = mysqli_fetch_assoc($resultado)) {
+                        echo "<tr>";
+ 
+                        /* Htmlspecialchars = É uma função em PHP que converte caracteres especiais em entidades HTML */
+                        echo "<td>" . htmlspecialchars($row['cidade']) . "</td>";
+ 
+                        echo "<td>" . htmlspecialchars($row['tipoResidencia']) . "</td>";
+                        
+                        
+                        echo "<td>" . ($row["valor"] ) . "</td>";
+                        
+                        echo "<td>" . htmlspecialchars($row['bairro']) . "</td>";
+
+                        echo "<td>" . htmlspecialchars($row['observacao']) . "</td>";
+
+                        echo "<td> <img src='" . htmlspecialchars($row["imagem"]) . " 'alt='Imagem do imóvel' width='100'> </td>";
+ 
+                        echo "</tr>";
+                    }
+ 
+                }
+ 
+                else {
+                    echo "Nenhum Livro Encontrado";
+                }
+ 
+                ?>
+ 
+ 
+            </tbody>
+ 
+        </table>
+        </main>
+        <footer>
+            <h4>NW Imóveis</h2>
+            <div class="redes">
+                <a href=""><i class="fa-brands fa-facebook-f"></i></a>
+                <a href=""><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </footer>
+
+
+
+
+
+
+
+        <script src="https://kit.fontawesome.com/b8bf04cdf7.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"   crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"   crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"  crossorigin="anonymous"></script>
+    </body>
+</html>

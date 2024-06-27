@@ -1,0 +1,111 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    min-width: 320px;
+}
+.banner{
+    height: 70vh;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.822), rgba(0, 0, 0, 0.651)), url(../img/banner.jpg);
+    clip-path: polygon(50% 5%, 100% 0, 100% 100%, 50% 95%, 0 100%, 0 0);
+    /* clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%); */
+}
+.banner h2{
+    font-size: 90px;
+    text-align: center;
+}
+.banner p{
+    font-size: 20px;
+    text-align: center;
+}
+main .opcoes{
+    padding:40px;
+    display: flex;
+    gap: 52px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.sobre-nos{
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    border: 2px solid black;
+    padding: 32px 20px 20px 20px;
+    box-sizing: border-box;
+    border-radius: 16px;
+    position: relative;
+}
+section .sobre-nos:nth-of-type(2){
+    justify-content: space-between;
+}
+.sobre-nos p{
+    text-align: center;
+    font-weight: 500;
+    margin: 0;
+}
+.sobre-nos i{
+    font-size: 40px;
+    position: absolute;
+    top:-20px;
+    background-color: white;
+    padding: 0 16px 0 16px;
+}
+.sobre-nos a{
+    color: white;
+    background-color: black;
+    padding: 8px 20px;
+    border-radius: 16px;
+    text-decoration: none;
+    margin: 0;
+    font-weight: 500;
+}
+.sobre-nos a:hover{
+    color: rgb(182, 182, 182);
+}
+footer{
+    height: 100px;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items:center;
+    background-color: black;
+}
+footer .redes{
+    display: flex;
+    gap: 16px;
+}
+footer .redes i{
+    font-size: 16px;
+    text-align: center;
+    line-height: 100%;
+    border: 1px solid white;
+    width: 34px;
+    padding: 8px;
+    border-radius: 50%;
+}
+footer .redes a{
+    color: white;
+}
+footer .redes a:hover{
+    color: rgb(182, 182, 182);
+}
+
+@media screen and (max-width:768px){
+    .banner h2{
+        font-size: 70px;
+    }
+    .banner p{
+        font-size: 18px;
+    }
+    main .opcoes{
+        flex-wrap: wrap;
+    }
+}

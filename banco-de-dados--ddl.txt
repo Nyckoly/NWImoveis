@@ -1,0 +1,13 @@
+CREATE DATABASE imobiliaria;
+USE imobiliaria;
+ 
+CREATE TABLE cadastroDeImoveis(
+idCadastroDeImoveis INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+cidade VARCHAR(50) NOT NULL,
+tipoResidencia VARCHAR(11) NOT NULL,
+tipo VARCHAR(7) NOT NULL,
+valor DECIMAL(9,2) NOT NULL,
+bairro VARCHAR(100) NOT NULL,
+observacao VARCHAR(200),
+imagem VARCHAR(300) NOT NULL,
+);
