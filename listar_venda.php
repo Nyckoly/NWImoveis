@@ -24,62 +24,62 @@ $resultado = mysqli_query($conn, $sql)
         <title>Document</title>
     </head>
     <body>
+        <nav><?php include 'cabecalho.php';?></nav>
         <main>
-            <?php include 'cabecalho.php';?>
             <div class="container">
- 
-        <table class="table table-striped">
- 
-            <thead>
- 
-                <tr>
-                    <th>cidade</th>
-                    <th>Tipo de Residência</th>
-                    <th>valor</th>
-                    <th>bairro</th>
-                    <th>observação</th>
-                    <th>Imagem</th>
-                </tr>
- 
-            </thead>
- 
-            <tbody>
- 
-                <?php
-                if (mysqli_num_rows($resultado) > 0) {
- 
-                    while ($row = mysqli_fetch_assoc($resultado)) {
-                        echo "<tr>";
- 
-                        /* Htmlspecialchars = É uma função em PHP que converte caracteres especiais em entidades HTML */
-                        echo "<td>" . htmlspecialchars($row['cidade']) . "</td>";
- 
-                        echo "<td>" . htmlspecialchars($row['tipoResidencia']) . "</td>";
-                        
-                        
-                        echo "<td>" . ($row["valor"] ) . "</td>";
-                        
-                        echo "<td>" . htmlspecialchars($row['bairro']) . "</td>";
+                <table class="table table-striped">
+        
+                    <thead>
+        
+                        <tr>
+                            <th>cidade</th>
+                            <th>Tipo de Residência</th>
+                            <th>valor</th>
+                            <th>bairro</th>
+                            <th>observação</th>
+                            <th>Imagem</th>
+                        </tr>
+        
+                    </thead>
+        
+                    <tbody>
+        
+                        <?php
+                        if (mysqli_num_rows($resultado) > 0) {
+        
+                            while ($row = mysqli_fetch_assoc($resultado)) {
+                                echo "<tr>";
+        
+                                /* Htmlspecialchars = É uma função em PHP que converte caracteres especiais em entidades HTML */
+                                echo "<td>" . htmlspecialchars($row['cidade']) . "</td>";
+        
+                                echo "<td>" . htmlspecialchars($row['tipoResidencia']) . "</td>";
+                                
+                                
+                                echo "<td>" . ($row["valor"] ) . "</td>";
+                                
+                                echo "<td>" . htmlspecialchars($row['bairro']) . "</td>";
 
-                        echo "<td>" . htmlspecialchars($row['observacao']) . "</td>";
+                                echo "<td>" . htmlspecialchars($row['observacao']) . "</td>";
 
-                        echo "<td> <img src='" . htmlspecialchars($row["imagem"]) . " 'alt='Imagem do imóvel' width='100'> </td>";
- 
-                        echo "</tr>";
-                    }
- 
-                }
- 
-                else {
-                    echo "Nenhum Livro Encontrado";
-                }
- 
-                ?>
- 
- 
-            </tbody>
- 
-        </table>
+                                echo "<td> <img src='" . htmlspecialchars($row["imagem"]) . " 'alt='Imagem do imóvel' width='100'> </td>";
+        
+                                echo "</tr>";
+                            }
+        
+                        }
+        
+                        else {
+                            echo "Nenhum Livro Encontrado";
+                        }
+        
+                        ?>
+        
+        
+                    </tbody>
+        
+                </table>
+            </div>
         </main>
         <footer>
             <h4>NW Imóveis</h2>
