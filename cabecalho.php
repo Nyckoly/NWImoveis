@@ -6,19 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
-    <title>Bootstrap Example</title>
-    <link rel="stylesheet" href="css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Cabeçalho</title>
   </head>
   <body class=>
-
-    <!-- Example Code -->
-    
-        
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-
-
-          <div class="container-fluid">
+     
+    <nav class="navbar navbar-expand-lg sticky-top">
+          <div class="container-fluid ">
             <a class="navbar-brand" href="index.php">NW Imóveis</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -44,10 +42,9 @@
                   </li>
                 </ul>
               </div>
-            </div>
+          </div>
     </nav>
     
-      
-    <!-- End Example Code -->
+
   </body>
 </html>
