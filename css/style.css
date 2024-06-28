@@ -5,6 +5,24 @@
 body{
     min-width: 320px;
 }
+main{
+    width: 100%;
+}
+nav .navbar-brand{
+    font-family: "Outfit";
+    font-optical-sizing: auto;
+    font-size: 24px;
+    font-weight: 500;
+}
+nav .offcanvas-title{
+    font-family: "Outfit";
+    font-optical-sizing: auto;
+    font-weight: 500;
+}
+.navbar{
+    padding-right: 8%;
+    padding-left: 8%;
+}
 .banner{
     height: 70vh;
     color: white;
@@ -17,6 +35,9 @@ body{
     /* clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%); */
 }
 .banner h2{
+    font-family: "Outfit";
+    font-optical-sizing: auto;
+    font-weight: 500;
     font-size: 90px;
     text-align: center;
 }
@@ -71,6 +92,9 @@ section .sobre-nos:nth-of-type(2){
     color: rgb(182, 182, 182);
 }
 footer{
+    font-family: "Outfit";
+    font-optical-sizing: auto;
+    font-weight: 500;
     height: 100px;
     color: white;
     display: flex;
