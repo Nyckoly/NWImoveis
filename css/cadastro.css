@@ -21,7 +21,6 @@ form input, form select {
 form .compra{
     display: flex;
     align-items: center;
-    justify-content: space-between;
     gap: 8px;
 }
 form .compra .valor{
@@ -40,20 +39,21 @@ form .compra .valor label{
     border: 1px solid rgb(118, 118, 118);
     margin-bottom: 10px; */
 }
+input, select, #observacao{
+    padding: .375rem .75rem .375rem;
+    width: 100%;
+    line-height: 1.5;
+    color: var(--bs-body-color);
+    background-color: var(--bs-body-bg);
+    border: var(--bs-border-width) solid var(--bs-border-color);
+    border-radius: var(--bs-border-radius);
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
 form .compra .valor input#valor{
     padding-left: 28px;
 }
-
-form input[type="radio"]{
-    margin: 0;
-    appearance: none;
-    border-radius: 5px;
-    width: 16px;
-    height: 16px;
-    border: 1px solid rgb(118, 118, 118);
-}
-form input[type="radio"]:checked{
-    background-color: black;
+form .compra select#tipo, form .select select#tiporesidencia{
+    padding-right: 28px;
 }
 form .select{
     display: flex;
@@ -63,6 +63,12 @@ form .select{
 form .select i, form .compra i{
     margin-bottom: 10px;
     font-size: 20px;
+}
+form .select .icone, form .compra .icone{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 36px;
 }
 form input#imagem{
     padding-top: 0;
@@ -78,13 +84,9 @@ form button {
     border-radius: 100px;
     transition: background 3s linear;
 }
- 
+
 form button:hover {
     background: rgb(0,0,0);
     background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(28,28,28,1) 100%);
     /* background-color: #292929; */
-}
-
-.fa-house, .fa-building, .fa-hammer, .fa-sack-dollar, .fa-tag{
-    display: none;
 }

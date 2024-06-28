@@ -14,7 +14,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     $valor = floatval(mysqli_real_escape_string($conn,$_POST["valor"]));
 
     $tipo = mysqli_real_escape_string($conn,$_POST["tipo"]);
-    var_dump($valor);
+    // var_dump($valor);
     $tiporesidencia =  mysqli_real_escape_string($conn,$_POST["tiporesidencia"]);
     $observacao =  mysqli_real_escape_string($conn,$_POST["observacao"]);
    
@@ -27,15 +27,15 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
       $sql = "INSERT INTO cadastrodeimoveis (valor, cidade, bairro, tipo,tiporesidencia, observacao, imagem) VALUES ('$valor','$cidade','$bairro','$tipo', '$tiporesidencia', '$observacao','$destino')";
       if(mysqli_query($conn,$sql)){
  
-        echo"Livro cadastrado com sucesso";
+        echo"Imóvel cadastrado com sucesso";
       }
       else{
-        echo"erro ao cadastrar o livro " . mysqli_error($conn);
+        echo"Erro ao cadastrar o imóvel" . mysqli_error($conn);
       }
    
     }
     else{
-      echo "erro ao fazer upload da imagem";
+      echo "Erro ao fazer upload da imagem";
     }
  
  
@@ -57,15 +57,14 @@ mysqli_close($conn);
     <?php include 'cabecalho.php'?>
     <main>
       <form method="POST" enctype="multipart/form-data">
-          <label for="endereco">Endereço</label>
+          <label for="">Endereço</label>
           <input type="text" placeholder="Cidade" id="cidade" name="cidade" required>
           <input type="text" placeholder="Bairro" id="bairro" name="bairro" required>
+          <label for="">Especificações</label>
           <div class="compra">
             <div class="valor">
               <label for="valor"><i class="fa-solid fa-dollar-sign"></i></label>
               <input type="number" placeholder="Valor" id="valor" name="valor" required>
-            </div>
-            <div class="icone">
             </div>
             <select name="tipo" id="tipo">
             <option selected disabled value="">Selecione o tipo do anuncio</option>
@@ -82,9 +81,9 @@ mysqli_close($conn);
             </select>
           </div>
           <label for="observacao">Observação</label>
-          <input name="observacao"type="text" maxlength="300" placeholder="digite aqui sua observação">
+          <textarea id="observacao" name="observacao"type="text" rows="4" maxlength="300" placeholder="Digite aqui sua observação..."></textarea>
           <label for="imagem">Imagem da casa</label>
-          <input type="file" id="imagem" name="imagem" required>
+          <input type="file" id="imagem" name="imagem" accept=".jpg, .jpeg, .png" required>
           <button type="submit">Cadastrar</button>
         </form>
     </main>
