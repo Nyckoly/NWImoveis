@@ -1,0 +1,94 @@
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #ffffff;
+    background-size: 20px 20px;
+    background-image:  repeating-linear-gradient(0deg, rgba(49,49,49,0.25), rgba(49,49,49,0.25) 1px, #ffffff 1px, #ffffff);
+}
+header nav{
+    background-color: white;
+}
+.container{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.card-imoveis{
+    color: white;
+    font-size: 12px;
+    width: 280px;
+    height: 280px;
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+    border-radius: 16px;
+    border: none;
+    border: 2px solid #ffffff;
+    background-color: #000;
+    box-shadow: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.card-imoveis:hover{
+    scale: 1.03;
+    border: 2px solid #000;
+    box-shadow: 3px 3px 1px #000;
+    color: #000;
+    background-color: #fff;
+}
+.card-imoveis .imagem{
+    width: 100%;
+    height: 60%;
+}
+.card-imoveis .imagem img{
+    border-radius: 8px;
+    width: 100%;
+    height: 100%;
+}
+.card-imoveis .localidade{
+    height: 10%;
+    gap: 8px;
+    display: flex;
+    align-items: center;
+}
+.card-imoveis .localidade .cidade::after{
+    content: ",";
+}
+.card-imoveis .informacoes{
+    height: 10%;
+    gap: 8px;
+    display: flex;
+    align-items: center;
+}
+.card-imoveis .informacoes .valor::first-letter
+.card-imoveis .informacoes .valor::before{
+    font-weight: 700;
+    content: "R$ ";
+}
+.card-imoveis .localidade p, .card-imoveis .informacoes p{
+    font-weight: 500;
+    text-transform:  capitalize;
+    margin: 0;
+}
+.card-imoveis .observacao{
+    align-items: center;
+    display: flex;
+    height: 20%;
+    gap: 8px;
+}
+.card-imoveis .observacao p{
+    overflow-wrap: break-word;
+    overflow:auto;
+    margin: 0;
+}
+.icones{
+    width: 20px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

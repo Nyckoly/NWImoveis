@@ -15,71 +15,58 @@ $sql = "SELECT *FROM cadastrodeimoveis
 $resultado = mysqli_query($conn, $sql)
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/relatorios.css">
 
-        <title>Document</title>
+        <title>Relatório - Imóveis de aluguel</title>
     </head>
     <body>
+        <header><nav><?php include 'cabecalho.php';?></nav></header>
         <main>
-            <?php include 'cabecalho.php';?>
             <div class="container">
- 
-        <table class="table table-striped">
- 
-            <thead>
- 
-                <tr>
-                    <th>cidade</th>
-                    <th>Tipo de Residência</th>
-                    <th>valor</th>
-                    <th>bairro</th>
-                    <th>observação</th>
-                    <th>Imagem</th>
-                </tr>
- 
-            </thead>
- 
-            <tbody>
- 
                 <?php
                 if (mysqli_num_rows($resultado) > 0) {
- 
+            
                     while ($row = mysqli_fetch_assoc($resultado)) {
-                        echo "<tr>";
- 
-                        /* Htmlspecialchars = É uma função em PHP que converte caracteres especiais em entidades HTML */
-                        echo "<td>" . htmlspecialchars($row['cidade']) . "</td>";
- 
-                        echo "<td>" . htmlspecialchars($row['tipoResidencia']) . "</td>";
-                        
-                        
-                        echo "<td>" . ($row["valor"] ) . "</td>";
-                        
-                        echo "<td>" . htmlspecialchars($row['bairro']) . "</td>";
-
-                        echo "<td>" . htmlspecialchars($row['observacao']) . "</td>";
-
-                        echo "<td> <img src='" . htmlspecialchars($row["imagem"]) . " 'alt='Imagem do imóvel' width='100'> </td>";
- 
-                        echo "</tr>";
+                        echo "<div class='card-imoveis'>";
+                            echo "<div class='imagem'><img src='".htmlspecialchars($row["imagem"])."' alt='imagem do imóvel'></div>";
+                            echo "<div class='localidade'>";
+                                echo"<div class='icones'><i class='fa-solid fa-location-dot'></i></div>";
+                                echo "<p class='cidade'>".htmlspecialchars($row['cidade'])."</p>";
+                                echo "<p class='bairro'>".htmlspecialchars($row['bairro'])."</p>";
+                            echo "</div>";
+                            echo "<div class='informacoes'>";
+                                echo "<div class='icones'>";
+                                if ($row["tipoResidencia"] == "casa"){
+                                    echo "<i class='fa-solid fa-house'></i>";
+                                }
+                                else if ($row["tipoResidencia"] == "apartamento"){
+                                    echo "<i class='fa-solid fa-building'></i>";
+                                }
+                                else if ($row["tipoResidencia"] == "terreno"){
+                                    echo "<i class='fa-solid fa-hammer'></i>";
+                                }
+                                echo "</div>";
+                                echo "<p class='tipo'>".htmlspecialchars($row['tipoResidencia'])."</p>";
+                                echo "<p class='valor'>".($row["valor"])."</p>";
+                            echo "</div>";
+                            echo "<div class='observacao'>";
+                                echo "<div class='icones'><i class='fa-solid fa-comment'></i></div>";
+                                echo "<p>".htmlspecialchars($row['observacao'])."</p>";
+                            echo "</div>";
+                        echo "</div>";
                     }
- 
+            
                 }
- 
                 else {
-                    echo "Nenhum Livro Encontrado";
+                    echo "Nenhum Imóvel Encontrado";
                 }
- 
                 ?>
- 
- 
-            </tbody>
- 
-        </table>
+            </div>
         </main>
         <footer>
             <h4>NW Imóveis</h2>
@@ -88,13 +75,6 @@ $resultado = mysqli_query($conn, $sql)
                 <a href=""><i class="fa-brands fa-instagram"></i></a>
             </div>
         </footer>
-
-
-
-
-
-
-
         <script src="https://kit.fontawesome.com/b8bf04cdf7.js" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"   crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"   crossorigin="anonymous"></script>
