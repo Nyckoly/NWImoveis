@@ -82,14 +82,18 @@ section .sobre-nos:nth-of-type(2){
 .sobre-nos a{
     color: white;
     background-color: black;
-    padding: 8px 20px;
-    border-radius: 16px;
+    padding: 6px 20px;
+    border-radius: 20px;
     text-decoration: none;
     margin: 0;
     font-weight: 500;
+    border: 2px solid #000;
+    transition: 0.2s;
 }
 .sobre-nos a:hover{
-    color: rgb(182, 182, 182);
+    scale: 1.03;
+    color: #000;
+    background: #fff;
 }
 footer{
     font-family: "Outfit";
@@ -117,9 +121,11 @@ footer .redes i{
 }
 footer .redes a{
     color: white;
+    transition: 0.2s;
 }
 footer .redes a:hover{
     color: rgb(182, 182, 182);
+    scale: 1.09;
 }
 
 @media screen and (max-width:768px){

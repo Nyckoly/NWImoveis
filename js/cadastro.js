@@ -13,11 +13,11 @@ select1.addEventListener("change", (event) => {
     icons1.insertBefore(icone1, select1)
     if (event.target.value == "aluguel"){
         
-        icone1.innerHTML = "<i class='fa-solid fa-tag'></i>"
+        icone1.innerHTML = "<i class='fa-solid fa-tag animate__animated animate__fadeIn'></i>"
     }
     else if (event.target.value == "venda"){
         
-        icone1.innerHTML = "<i class='fa-solid fa-sack-dollar'></i>"
+        icone1.innerHTML = "<i class='fa-solid fa-sack-dollar animate__animated animate__fadeIn'></i>"
     }
 })
 
@@ -27,14 +27,14 @@ select2.addEventListener("change", (event) => {
         
     if (event.target.value == "casa"){
         icons2.prepend(icone2)
-        icone2.innerHTML = "<i class='fa-solid fa-house'></i>"
+        icone2.innerHTML = "<i class='fa-solid fa-house animate__animated animate__fadeIn'></i>"
     }
     else if (event.target.value == "apartamento"){
         icons2.prepend(icone2)
-        icone2.innerHTML = "<i class='fa-solid fa-building'></i>"
+        icone2.innerHTML = "<i class='fa-solid fa-building animate__animated animate__fadeIn'></i>"
     }
     else if (event.target.value == "terreno"){
         icons2.prepend(icone2)
-        icone2.innerHTML = "<i class='fa-solid fa-hammer'></i>"
+        icone2.innerHTML = "<i class='fa-solid fa-hammer animate__animated animate__fadeIn'></i>"
     }
 })

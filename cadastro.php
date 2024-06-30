@@ -51,6 +51,7 @@ mysqli_close($conn);
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Cadastro</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW +ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" href="css/cadastro.css">
   </head>
   <body>
@@ -63,7 +64,7 @@ mysqli_close($conn);
           <label for="">Especificações</label>
           <div class="compra">
             <div class="valor">
-              <label for="valor"><i class="fa-solid fa-dollar-sign"></i></label>
+              <label id="um" for="valor"><i class="fa-solid fa-dollar-sign"></i></label>
               <input type="number" placeholder="Valor" id="valor" name="valor" required>
             </div>
             <select name="tipo" id="tipo">
@@ -82,18 +83,18 @@ mysqli_close($conn);
           </div>
           <label for="observacao">Observação</label>
           <textarea id="observacao" name="observacao"type="text" rows="4" maxlength="300" placeholder="Digite aqui sua observação..."></textarea>
-          <label for="imagem">Imagem da casa</label>
+          <label id="dois" for="imagem">Imagem da casa</label>
           <input type="file" id="imagem" name="imagem" accept=".jpg, .jpeg, .png" required>
           <button type="submit">Cadastrar</button>
         </form>
     </main>
     <footer>
-        <h4>NW Imóveis</h2>
-        <div class="redes">
-          <a href=""><i class="fa-brands fa-facebook-f"></i></a>
-          <a href=""><i class="fa-brands fa-instagram"></i></a>
-        </div>
-      </footer>
+      <h4>NW Imóveis</h2>
+      <div class="redes">
+        <a href=""><i class="fa-brands fa-facebook-f"></i></a>
+        <a href=""><i class="fa-brands fa-instagram"></i></a>
+      </div>
+    </footer>
     <script src="js/cadastro.js"></script>
     <script src="https://kit.fontawesome.com/b8bf04cdf7.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"   crossorigin="anonymous"></script>
