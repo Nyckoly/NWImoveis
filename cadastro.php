@@ -26,8 +26,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     if(move_uploaded_file($_FILES['imagem']['tmp_name'],$destino)){
       $sql = "INSERT INTO cadastrodeimoveis (valor, cidade, bairro, tipo,tiporesidencia, observacao, imagem) VALUES ('$valor','$cidade','$bairro','$tipo', '$tiporesidencia', '$observacao','$destino')";
       if(mysqli_query($conn,$sql)){
- 
-        echo"Imóvel cadastrado com sucesso";
+        echo "Imóvel cadastrado com sucesso";
       }
       else{
         echo"Erro ao cadastrar o imóvel" . mysqli_error($conn);
@@ -83,8 +82,8 @@ mysqli_close($conn);
           </div>
           <label for="observacao">Observação</label>
           <textarea id="observacao" name="observacao"type="text" rows="4" maxlength="300" placeholder="Digite aqui sua observação..."></textarea>
-          <label id="dois" for="imagem">Imagem da casa</label>
-          <input type="file" id="imagem" name="imagem" accept=".jpg, .jpeg, .png" required>
+          <label id="dois" clas="input-group-text" for="inputGroupFile02">Imagem da casa</label>
+          <input type="file" class="form-control" id="inputGroupFile02" name="imagem" accept=".jpg, .jpeg, .png" required>
           <button type="submit">Cadastrar</button>
         </form>
     </main>
