@@ -34,6 +34,46 @@
                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis dolorem laudantium nulla non doloremque porro esse optio distinctio laborum corrupti nihil excepturi veniam vitae officia nam, nisi dolore. Maiores, voluptate. Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
                 </div>
             </section>
+            <section class="equipe">
+                <h4>Nossa equipe</h4>
+                <div class="cards">
+                    <div class="pessoas">
+                        <div class="foto" id="renato"></div>
+                        <p class="nome">Renato Albuquerque</p>
+                        <p class="funcao">Diretor Fundador</p>
+                    </div>
+                    <div class="pessoas">
+                        <div class="foto" id="marisa"></div>
+                        <p class="nome">Marisa Teixeira</p>
+                        <p class="funcao">Consultora Imobiliária</p>
+                    </div>
+                    <div class="pessoas">
+                        <div class="foto" id="gabriela"></div>
+                        <p class="nome">Gabriela Oliveira</p>
+                        <p class="funcao">Consultora Imobiliária</p>
+                    </div>
+                    <div class="pessoas">
+                        <div class="foto" id="fernando"></div>
+                        <p class="nome">Fernando Martins</p>
+                        <p class="funcao">Sócio</p>
+                    </div>
+                </div>
+            </section>
+            <section class="interesse">
+                <h4>Registre seu interesse</h4>
+                <form action="">
+                    <div class="nome">
+                        <input type="text" placeholder="Nome.*">
+                        <input type="text" placeholder="Sobrenome.*">    
+                    </div>
+                    <div class="contato">
+                        <input type="tel" placeholder="Número de telefone.*">
+                        <input type="email" placeholder="Endereço de e-mail.*">
+                    </div>
+                    <textarea rows="3" placeholder="Que tipo de propriedade você está procurando?"></textarea>
+                    <button id="" type="submit">Enviar</button>
+                </form>
+            </section>
         </main>
         <footer>
             <h4>NW Imóveis</h2>

@@ -57,15 +57,16 @@ main .opcoes{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
     border: 2px solid black;
     padding: 32px 20px 20px 20px;
     box-sizing: border-box;
     border-radius: 16px;
     position: relative;
+    gap: 8px;
 }
-section .sobre-nos:nth-of-type(2){
-    justify-content: space-between;
+.sobre-nos h3{
+    margin: 0;
 }
 .sobre-nos p{
     text-align: center;
@@ -85,7 +86,7 @@ section .sobre-nos:nth-of-type(2){
     padding: 6px 20px;
     border-radius: 20px;
     text-decoration: none;
-    margin: 0;
+    margin-top: 8px;
     font-weight: 500;
     border: 2px solid #000;
     transition: 0.2s;
@@ -94,6 +95,145 @@ section .sobre-nos:nth-of-type(2){
     scale: 1.03;
     color: #000;
     background: #fff;
+}
+section.equipe{
+    padding: 40px 10%;
+    background-color: #ececec;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+}
+section.equipe h4{
+    font-family: "outfit";
+    text-transform: uppercase;
+    font-weight: 700;
+    background-color: #ececec;
+    padding: 0 12px 0 12px;
+    position: absolute;
+    top: 28px;
+}
+section.equipe .cards{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 0 38px 0;
+    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
+    gap: 20px;
+}
+.equipe .cards .pessoas{
+    font-size: 14px;
+    color: #000;
+    font-weight: 600;
+    font-optical-sizing: auto;
+    border: 4px solid #fff;
+    background-color: #fff;
+}
+.equipe .cards .pessoas .foto{
+    box-sizing: border-box;
+    width: fit-content;
+    height: 200px;
+    width: 200px;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 12px;
+    filter: grayscale(100%);
+}
+.equipe .cards .pessoas #renato{
+    background-image:linear-gradient(rgba(0, 0, 0, 0.400), rgba(0, 0, 0, 0.400)), url(../img/equipe/renato.jpg);
+}
+.equipe .cards .pessoas #marisa{
+    background-image:linear-gradient(rgba(0, 0, 0, 0.400), rgba(0, 0, 0, 0.400)), url(../img/equipe/marisa.jpg);
+}
+.equipe .cards .pessoas #gabriela{
+    background-image:linear-gradient(rgba(0, 0, 0, 0.400), rgba(0, 0, 0, 0.400)), url(../img/equipe/gabriela.jpg);
+}
+.equipe .cards .pessoas #fernando{
+    background-image:linear-gradient(rgba(0, 0, 0, 0.400), rgba(0, 0, 0, 0.400)), url(../img/equipe/fernando.jpg);
+}
+.equipe .cards .pessoas .nome{
+    padding-left: 8px;
+    font-weight: 800;
+    margin:0;
+    font-family: "outfit";
+    text-transform: uppercase;
+}
+
+.equipe .cards .pessoas .funcao{
+    padding-left: 8px;
+    padding-bottom: 12px;
+    color: rgba(53, 53, 53, 1);
+    margin:0;
+    font-family: sans-serif;
+}
+
+section.interesse{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 80px 10%;
+    position: relative;
+}
+section.interesse h4{
+    padding: 0 16px 0 16px;
+    position: absolute;
+    margin: 0;
+    top: 68px;
+    font-family: "outfit";
+    font-weight: 700;
+    text-transform: uppercase;
+    background-color: #fff;
+}
+section.interesse form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    width: 50%;
+    padding: 50px 32px 32px 32px;
+    border-radius: 16px;
+    border: 2px solid #000;
+}
+section.interesse form .nome,
+section.interesse form .contato{
+    display: flex;
+    gap: 16px;
+    width: 100%;
+}
+section.interesse form .nome input,
+section.interesse form .contato input,
+section.interesse form textarea{
+    padding: .375rem .75rem .375rem;
+    width: 100%;
+    line-height: 1.5;
+    color: var(--bs-body-color);
+    background-color: var(--bs-body-bg);
+    border: 2px solid var(--bs-border-color);
+    border-radius: var(--bs-border-radius);
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+section.interesse form button{
+    margin-top: 8px;
+    font-weight: 500;
+    padding: 6px 20px;
+    width: 50%;
+    color: #fff;
+    border: none;
+    border-radius: 2px;
+    background-color: #000;
+    border-radius: 20px;
+    border: 2px solid #000;
+    transition: 0.2s;
+}
+section.interesse form button:hover{
+    scale: 1.03;
+    color: #000;
+    background: #ececec;
 }
 footer{
     font-family: "Outfit";
@@ -135,7 +275,23 @@ footer .redes a:hover{
     .banner p{
         font-size: 18px;
     }
-    main .opcoes{
-        flex-wrap: wrap;
+    section.interesse form{
+        width: 100%;
+    }
+    section.interesse h4{
+        padding: 0 8px 0 8px;
+    }
+    section.interesse form .nome,
+    section.interesse form .contato{
+    flex-wrap: wrap;
+    }
+}
+@media screen and (max-width:400px){
+    .sobre-nos h3{
+        font-size: 20px;
+    }
+    section.interesse h4{
+        font-size: 16px;
+        top: 72px;
     }
 }
